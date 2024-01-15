@@ -7,6 +7,13 @@
 
 import SwiftUI
 
+struct amountModifier: ViewModifier {
+    func body(content: Content) -> some View {
+        content
+            .foregroundColor(.red)
+    }
+}
+
 struct ContentView: View {
     @State private var checkAmount = 0.0
     @State private var numberOfPeople = 2
@@ -57,6 +64,8 @@ struct ContentView: View {
                 
                 Section("Total amount") {
                     Text(amountPlusTip, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                        .foregroundStyle(tipPercentage == 0 ? .red : .black)
+                        
                 }
                 
                 Section("Amount per person") {
