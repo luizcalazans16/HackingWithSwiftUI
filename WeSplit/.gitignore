@@ -1,0 +1,43 @@
+# Xcode
+.DS_Store
+build/
+DerivedData/
+*.hmap
+*.ipa
+*.xcuserstate
+*.xcworkspace/
+xcuserdata/
+
+# Swift Package Manager
+Package.pins
+
+# CocoaPods
+Pods/
+*.lock
+*.xcworkspace/
+
+# Carthage
+Carthage/Checkouts
+Carthage/Build
+
+# Swift Package Manager
+.build/
+.Package.resolved
+
+# macOS
+.DS_Store
+
+# Linux
+.vscode/
+
+# Temporary files
+*.swp
+*~
+
+# Editor-specific files
+.idea/
+.vscode/
+
+# Dependency management
+Cartfile.resolved
+Podfile.lock
