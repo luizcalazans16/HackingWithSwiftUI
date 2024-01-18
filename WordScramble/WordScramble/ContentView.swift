@@ -16,6 +16,8 @@ struct ContentView: View {
     @State private var errorMessage = ""
     @State private var showingError = false
     
+    @State private var score = 0
+    
     var body: some View {
         NavigationStack {
             List {
@@ -30,6 +32,10 @@ struct ContentView: View {
                             Image(systemName: "\(word.count).circle")
                             Text(word)
                         }}
+                }
+                
+                Section {
+                    Text("Score: \(score)")
                 }
             }
             .navigationTitle(rootWord).toolbar {
@@ -71,6 +77,7 @@ struct ContentView: View {
         
         withAnimation {
             usedWords.insert(answer, at: 0)
+            score += 1
         }
         
         newWord = ""
@@ -82,6 +89,7 @@ struct ContentView: View {
                 let allWords = startWords.components(separatedBy: "\n")
                 rootWord = allWords.randomElement() ?? "silkworm"
                 usedWords.removeAll()
+                score = 0
                 return
             }
         }
